@@ -1,0 +1,105 @@
+MUSIC SETUP GUIDE
+=================
+
+This folder should contain your background music file.
+
+REQUIRED FILE:
+✅ music.mp3 - Soft instrumental background music (20-30 minutes)
+
+🎵 MUSIC RECOMMENDATIONS:
+
+1. **Piano Instrumental**
+   - Calm, elegant, perfect for emotional moments
+   - Try: "Peaceful Piano" playlists on Spotify/YouTube
+
+2. **Lo-Fi Ambient**
+   - Relaxing, modern, perfect for the vibe
+   - Try: Lo-Fi Girl, Chillhop Music on YouTube
+
+3. **Soft Orchestral**
+   - Classic, beautiful, timeless
+   - Try: Film scores, classical compilations
+
+4. **Acoustic Guitar**
+   - Warm, intimate, heartfelt
+   - Try: Fingerstyle guitar channels
+
+5. **Nature Sounds with Music**
+   - Rainfall + piano, Forest + strings
+   - Very calming and immersive
+
+📊 MUSIC SPECIFICATIONS:
+
+Format: MP3 (required)
+Duration: 20-30 minutes (continuous loop)
+Bitrate: 128-192 kbps (recommended)
+Sample Rate: 44.1 kHz
+File Size: Ideally <50MB
+
+🎧 HOW TO FIND MUSIC:
+
+FREE SOURCES:
+- YouTube (Download as MP3 using tools)
+- Free Music Archive (freemusicarchive.org)
+- Incompetech (incompetech.com)
+- Pixabay Music (pixabay.com/music)
+- Bensound (bensound.com)
+- Epidemic Sound (Free tier)
+
+PAID/PREMIUM:
+- Spotify (download premium tracks)
+- Apple Music
+- Soundcloud
+- Artlist
+
+🔧 HOW TO PREPARE YOUR MUSIC:
+
+1. Find a 20-30 minute instrumental track
+2. Download or record it
+3. Convert to MP3 format if needed (use Audacity or online converters)
+4. Name it exactly: music.mp3
+5. Place it in this folder (assets/)
+
+⚙️ CONVERSION TOOLS (FREE):
+
+Online:
+- Online-Convert.com
+- CloudConvert.com
+- Zamzar.com
+
+Desktop:
+- Audacity (audacity-team.org)
+- VLC Media Player (convert feature)
+- FFmpeg (command line)
+
+🎬 PERFECT SONG STRUCTURE:
+
+0:00 - 2:00     → Soft, welcoming (Loading screen)
+2:00 - 8:00     → Warm, emotional (Photos & Letter)
+8:00 - 15:00    → Cheerful, celebratory (Cake & celebration)
+15:00 - 20:00   → Reflective, peaceful (Memorial & gift)
+20:00 - 30:00   → Hopeful, gentle (Final slides & ending)
+
+⏯️ MUSIC LOOP BEHAVIOR:
+
+- Music auto-plays on page load
+- Loops continuously throughout presentation
+- Volume is normal (user can control via browser)
+- No pause between loops
+
+💡 TIPS:
+
+✅ Choose instrumental to avoid lyrics distraction
+✅ Keep volume relatively low initially
+✅ Ensure smooth looping (no abrupt transitions)
+✅ Test on different devices
+✅ A good choice sets the perfect mood!
+
+📱 BROWSER AUDIO NOTES:
+
+- Most browsers require user interaction to autoplay
+- Click anywhere on page if music doesn't start
+- Some browsers may mute autoplay initially
+- User can mute/unmute from browser controls
+
+Delete this file after adding your music file.
