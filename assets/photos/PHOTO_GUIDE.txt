@@ -1,0 +1,32 @@
+PHOTO PLACEMENT GUIDE
+=====================
+
+This folder should contain the following photos with EXACT names:
+
+SLIDE 2 - Someone Truly Special (3 photos):
+✅ slide2-photo1.jpg - Blue saree (green background)
+✅ slide2-photo2.jpg - Pink saree selfie
+✅ slide2-photo3.jpg - Black saree
+
+SLIDE 5 - A World That Smiles Because of You (3 photos):
+✅ slide5-photo1.jpg - Maroon saree
+✅ slide5-photo2.jpg - Purple saree
+✅ slide5-photo3.jpg - Traditional selfie
+
+SLIDE 6 - Someone Watching Over You (1 photo):
+✅ slide6-photo.jpg - With father
+
+SLIDE 7 - One Last Gift (2 photos):
+✅ slide7-photo1.jpg - Selfie together
+✅ slide7-photo2.jpg - Walking feet photo
+
+TOTAL: 9 photos needed
+
+⚠️ IMPORTANT:
+- Use EXACT filenames (case-sensitive on some systems)
+- Use JPG or PNG format
+- Place all photos directly in this folder
+- Don't create subfolders
+- Compress images for faster loading (recommended: <500KB each)
+
+Delete this file after adding all photos.
