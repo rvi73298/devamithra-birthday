@@ -57,26 +57,39 @@ function nextSlide() {
 
 function triggerSlideAnimation(slideNumber) {
     switch(slideNumber) {
+        case 0: // Slide 1 - Friendship
+            console.log('Showing Slide 1: Friendship Test');
+            break;
         case 1: // Slide 2 - Photos
             animatePhotosSequence();
+            console.log('Showing Slide 2: Photos');
             break;
         case 2: // Slide 3 - Letter
             animateLetter();
+            console.log('Showing Slide 3: Letter');
             break;
         case 3: // Slide 4 - Cake
             animateCakeSlide();
+            console.log('Showing Slide 4: Cake');
             break;
         case 4: // Slide 5 - Tribute
             animateTributeSlide();
+            console.log('Showing Slide 5: Tribute');
             break;
         case 5: // Slide 6 - Memorial
             animateMemorialSlide();
+            console.log('Showing Slide 6: Memorial');
             break;
         case 6: // Slide 7 - Gift
             animateGiftSlide();
+            console.log('Showing Slide 7: Gift');
+            break;
+        case 7: // Slide 8 - Goodbye
+            console.log('Showing Slide 8: Goodbye');
             break;
         case 8: // Slide 9 - Secret
             animateSecretEnding();
+            console.log('Showing Slide 9: Secret Ending');
             break;
     }
 }
@@ -182,7 +195,9 @@ function handleCakeCut() {
     // Show continue button after effects
     setTimeout(() => {
         const continueBtn = document.querySelector('.slide-4 .btn-continue');
-        if (continueBtn) continueBtn.style.display = 'block';
+        if (continueBtn) {
+            continueBtn.style.display = 'block';
+        }
     }, 1500);
 }
 
@@ -194,7 +209,9 @@ function animateCakeSlide() {
     // Pandas have animation via CSS
     // Continue button hidden initially
     const continueBtn = document.querySelector('.slide-4 .btn-continue');
-    if (continueBtn) continueBtn.style.display = 'none';
+    if (continueBtn) {
+        continueBtn.style.display = 'none';
+    }
 }
 
 /* ===== SLIDE 5: TRIBUTE ===== */
@@ -479,7 +496,7 @@ function endPresentation() {
 /* ===== AUDIO CONTROL ===== */
 // Allow users to unmute music with any interaction if needed
 document.addEventListener('click', () => {
-    if (bgMusic.paused) {
+    if (bgMusic && bgMusic.paused) {
         bgMusic.play().catch(() => {
             console.log('Audio still blocked');
         });
@@ -491,7 +508,11 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ') {
         // Skip to next slide with spacebar or right arrow
         const continueBtn = document.querySelector('.slide.active .btn-continue');
-        if (continueBtn) continueBtn.click();
+        if (continueBtn && continueBtn.style.display !== 'none') {
+            continueBtn.click();
+        } else {
+            nextSlide();
+        }
     }
 });
 
@@ -540,27 +561,42 @@ document.head.appendChild(burstStyle);
 
 /* ===== ACCESSIBILITY ===== */
 // Ensure buttons are keyboard accessible
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            btn.click();
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
     });
 });
 
 /* ===== DEBUG MODE (Optional) ===== */
 window.skipToSlide = function(slideNum) {
     if (slideNum >= 0 && slideNum < totalSlides) {
+        console.log(`Jumping to slide ${slideNum + 1}`);
         showSlide(slideNum);
+    } else {
+        console.log(`Invalid slide number. Use 0-8`);
     }
 };
 
 window.toggleMusic = function() {
-    if (bgMusic.paused) {
+    if (bgMusic && bgMusic.paused) {
         bgMusic.play();
-    } else {
+        console.log('Music playing');
+    } else if (bgMusic) {
         bgMusic.pause();
+        console.log('Music paused');
     }
 };
 
-console.log('🎂 Birthday Website Loaded! Use skipToSlide(n) to jump to slides 0-8');
+window.getCurrentSlide = function() {
+    console.log(`Current slide: ${currentSlide + 1} of ${totalSlides}`);
+    return currentSlide;
+};
+
+console.log('🎂 Birthday Website Loaded!');
+console.log('Commands: skipToSlide(n) | toggleMusic() | getCurrentSlide()');
+console.log('Valid slides: 0-8');
