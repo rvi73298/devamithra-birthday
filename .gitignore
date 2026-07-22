@@ -1,0 +1,34 @@
+# Git ignore file for birthday website
+
+# OS files
+.DS_Store
+Thumbs.db
+.env.local
+
+# Node modules (if using any)
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Local server files
+.http-server-cwd
+
+# Logs
+*.log
+npm-debug.log*
+
+# Large media files (optional - uncomment if needed)
+# *.mp3
+# *.wav
+# *.mp4
