@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Devamithra 🐼💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Loading Screen -->
+        <div id="loadingScreen" class="loading-screen active">
+            <div class="loading-content">
+                <div class="panda-loader">
+                    <span class="panda-icon">🐼</span>
+                    <div class="lantern">🏮</div>
+                </div>
+                <div class="loading-text">
+                    <h1 class="title-fade">A Little Birthday Adventure</h1>
+                    <p class="subtitle-fade">Made Especially For...</p>
+                    <p class="name-fade">DEVAMITHRA 💖</p>
+                </div>
+                <div class="sparkles">
+                    <span class="sparkle">✨</span>
+                    <span class="sparkle">✨</span>
+                    <span class="sparkle">✨</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide Container -->
+        <div id="slideContainer" class="slide-container">
+            <!-- Slide 1: Friendship Test -->
+            <div class="slide slide-1" data-slide="1">
+                <div class="slide-bg">
+                    <div class="sky"></div>
+                    <div class="clouds">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                    </div>
+                    <div class="flowers">
+                        <span class="flower">🌸</span>
+                        <span class="flower">🌸</span>
+                        <span class="flower">🌸</span>
+                    </div>
+                    <div class="petals"></div>
+                </div>
+                <div class="slide-content">
+                    <div class="panda-character sad">🐼</div>
+                    <h2 class="slide-text">You're still my friend... right? 🥺</h2>
+                    <div class="button-group">
+                        <button class="btn btn-yes" onclick="handleFriendshipYes()">💚 YES</button>
+                        <button class="btn btn-no" onclick="handleFriendshipNo()">❤️ NO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Someone Truly Special -->
+            <div class="slide slide-2" data-slide="2">
+                <div class="slide-bg gradient-pink"></div>
+                <div class="slide-content">
+                    <div class="photos-container">
+                        <div class="photo-frame" id="photo-1">
+                            <img src="assets/photos/slide2-photo1.jpg" alt="Photo 1">
+                            <div class="photo-reaction">🐼</div>
+                        </div>
+                        <div class="photo-frame" id="photo-2">
+                            <img src="assets/photos/slide2-photo2.jpg" alt="Photo 2">
+                            <div class="photo-reaction">🐼</div>
+                        </div>
+                        <div class="photo-frame" id="photo-3">
+                            <img src="assets/photos/slide2-photo3.jpg" alt="Photo 3">
+                            <div class="photo-reaction">🐼</div>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <p id="text-1" class="photo-text">Before we celebrate today...</p>
+                        <p id="text-2" class="photo-text">There's someone I'd love to introduce...</p>
+                        <p id="text-3" class="photo-text">Someone whose smile can brighten even ordinary days.</p>
+                        <p id="text-4" class="photo-text">Someone who doesn't even try to be beautiful... Yet somehow always is.</p>
+                        <p id="text-5" class="photo-text">Some people don't just walk into your life... They quietly become a part of it.</p>
+                        <p id="text-6" class="photo-text">Out of everyone I could've met... I'm grateful life introduced me to you.</p>
+                        <p id="text-7" class="photo-text whisper">I think she's really special... 🐼</p>
+                    </div>
+                    <button class="btn btn-continue" onclick="nextSlide()">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Slide 3: Birthday Letter -->
+            <div class="slide slide-3" data-slide="3">
+                <div class="slide-bg gradient-lavender"></div>
+                <div class="slide-content">
+                    <div class="letter-section">
+                        <div class="panda-carrying">🐼</div>
+                        <div class="envelope-container">
+                            <div class="envelope">
+                                <div class="envelope-flap"></div>
+                                <div class="letter-content">
+                                    <h3>Dear Devamithra,</h3>
+                                    <p>On this special day, I wanted to take a moment to express how much your friendship means to me. You bring light into my life in ways you may never fully understand.</p>
+                                    <p>I hope this year brings you boundless happiness and precious moments filled with laughter and joy. I wish you strength to face any challenge, and the courage to pursue your dreams.</p>
+                                    <p>May your days be filled with love—from those around you and from yourself. I'm grateful for every memory we've created together, and I look forward to making many more.</p>
+                                    <p>Thank you for being such a wonderful friend. Your presence in my life is a gift I don't take for granted.</p>
+                                    <p>Here's to unforgettable memories ahead!</p>
+                                    <p class="signature">With gratitude and warmth,<br>Your Friend 💖</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panda-sitting">🐼</div>
+                    </div>
+                    <button class="btn btn-continue" onclick="nextSlide()">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Slide 4: Birthday Celebration -->
+            <div class="slide slide-4" data-slide="4">
+                <div class="slide-bg gradient-gold"></div>
+                <div class="slide-content">
+                    <div class="celebration-section">
+                        <div class="pandas-with-cake">
+                            <span class="panda-role panda-1">🐼</span>
+                            <span class="panda-role panda-2">🐼</span>
+                            <span class="panda-role panda-3">🐼</span>
+                            <span class="panda-role panda-4">🐼</span>
+                            <span class="panda-role panda-5">🐼</span>
+                        </div>
+                        <h2 class="celebration-title">Happy Birthday Devamithra 🎂</h2>
+                        <div class="cake-container">
+                            <div class="cake">
+                                <div class="cake-layer"></div>
+                                <div class="candle"></div>
+                                <div class="candle"></div>
+                                <div class="candle"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-cake" onclick="cutTheCake()">🎂 Cut the Cake</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: A World That Smiles Because of You -->
+            <div class="slide slide-5" data-slide="5">
+                <div class="slide-bg gradient-pink"></div>
+                <div class="slide-content">
+                    <div class="tribute-section">
+                        <div class="tribute-photos">
+                            <div class="tribute-photo" id="tribute-1">
+                                <img src="assets/photos/slide5-photo1.jpg" alt="Tribute 1">
+                                <p class="tribute-text">Strength looks beautiful on you... ❤️</p>
+                            </div>
+                            <div class="tribute-photo" id="tribute-2">
+                                <img src="assets/photos/slide5-photo2.jpg" alt="Tribute 2">
+                                <p class="tribute-text">You don't need to try to shine... ⭐</p>
+                            </div>
+                            <div class="tribute-photo" id="tribute-3">
+                                <img src="assets/photos/slide5-photo3.jpg" alt="Tribute 3">
+                                <p class="tribute-text">Never forget how amazing you are... 🐼</p>
+                            </div>
+                        </div>
+                        <div class="heart-formation">
+                            <p class="final-tribute-text">Every picture tells a story... But none of them can fully capture the wonderful person you are.</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-continue" onclick="nextSlide()">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Slide 6: Someone Watching Over You -->
+            <div class="slide slide-6" data-slide="6">
+                <div class="slide-bg night-sky">
+                    <div class="stars"></div>
+                </div>
+                <div class="slide-content">
+                    <div class="memorial-section">
+                        <div class="lantern-panda">🐼</div>
+                        <div class="memorial-photo">
+                            <img src="assets/photos/slide6-photo.jpg" alt="With Father">
+                            <div class="white-flower">🤍</div>
+                        </div>
+                        <div class="memorial-text">
+                            <p>Some bonds never fade.</p>
+                            <p>Some love never leaves.</p>
+                            <p>Even though your dad isn't here today... His love will always stay with you.</p>
+                            <p>I hope birthdays remind you not only of what you've lost... But also of all the love that continues to surround you.</p>
+                            <p>Whenever life feels heavy... Remember you don't have to face it alone.</p>
+                            <p>I'll always be here as a friend... Supporting you. Cheering for you. Hoping to see you smile.</p>
+                            <p class="shining-text">Some people may be out of sight... But never out of love.</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-continue" onclick="nextSlide()">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Slide 7: One Last Gift -->
+            <div class="slide slide-7" data-slide="7">
+                <div class="slide-bg gradient-lavender"></div>
+                <div class="slide-content">
+                    <div class="gift-section">
+                        <div class="gift-pandas">
+                            <span class="gift-panda">🐼</span>
+                            <span class="gift-panda">🐼</span>
+                            <span class="gift-panda">🐼</span>
+                        </div>
+                        <div class="gift-box" id="giftBox">
+                            <div class="gift-top"></div>
+                            <div class="gift-content">
+                                <div class="gift-photo" id="gift-photo-1">
+                                    <img src="assets/photos/slide7-photo1.jpg" alt="Selfie Together">
+                                    <p>Your selfie together.</p>
+                                </div>
+                                <div class="gift-photo" id="gift-photo-2">
+                                    <img src="assets/photos/slide7-photo2.jpg" alt="Walking Feet">
+                                    <p>No matter where life takes us... I hope we always find our way back to the friendship that made so many moments special.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gift-message">
+                            <p>No matter what happens to you... No matter what you do... I'll always be here for you.</p>
+                            <p>Some gifts aren't wrapped with ribbons... They're wrapped with memories.</p>
+                            <div class="paw-prints">🐾 👣 🐾</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-continue" onclick="nextSlide()">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Slide 8: Goodbye -->
+            <div class="slide slide-8" data-slide="8">
+                <div class="slide-bg night-sky">
+                    <div class="stars"></div>
+                    <div class="moon">🌙</div>
+                </div>
+                <div class="slide-content">
+                    <div class="final-section">
+                        <div class="pandas-on-moon">
+                            <span class="moon-panda panda-waving">🐼</span>
+                            <span class="moon-panda panda-hugging">🐼</span>
+                            <span class="heart-on-moon">❤️</span>
+                        </div>
+                        <h2 class="final-title">Happy Birthday Devamithra ❤️</h2>
+                        <div class="final-message">
+                            <p>Thank you for being such a wonderful friend.</p>
+                            <p>I hope this little adventure made you smile.</p>
+                            <p>May this year bring you happiness, good health, peace, and countless beautiful memories.</p>
+                            <p>Some birthdays are celebrated with gifts... Some are celebrated with memories... This one was celebrated with both.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Secret Ending -->
+            <div class="slide slide-9" data-slide="9">
+                <div class="slide-bg night-sky">
+                    <div class="stars"></div>
+                </div>
+                <div class="slide-content">
+                    <div class="secret-ending">
+                        <div class="peeking-panda">👀🐼</div>
+                        <p class="secret-text">Psst... Don't forget to smile today...</p>
+                        <p class="secret-text-big">Happy Birthday!! 🐼🎂</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
