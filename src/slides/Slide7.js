@@ -238,6 +238,7 @@ const Slide7 = ({ onNext }) => {
             gap: '30px',
             justifyContent: 'center',
             alignItems: 'center',
+            flexWrap: 'wrap',
           }}
         >
           {/* Selfie */}
@@ -245,26 +246,70 @@ const Slide7 = ({ onNext }) => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             style={{
-              fontSize: '100px',
+              width: '100px',
+              height: '100px',
+              borderRadius: '15px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15)',
+              border: '2px solid rgba(255, 215, 0, 0.3)',
+              backgroundColor: '#fff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15))',
             }}
           >
-            🤳
+            <img
+              src="/photos/slide7/selfie.jpg"
+              alt="Selfie together"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '13px',
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                console.warn('Selfie photo not found at /photos/slide7/selfie.jpg');
+              }}
+            />
           </motion.div>
 
           {/* Arrow */}
-          <div style={{ fontSize: '50px', color: '#d81b60' }}>➜</div>
+          <div style={{ fontSize: '50px', color: '#d81b60' }}>→</div>
 
           {/* Walking Feet */}
           <motion.div
             animate={{ x: [0, 20, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             style={{
-              fontSize: '100px',
+              width: '100px',
+              height: '100px',
+              borderRadius: '15px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15)',
+              border: '2px solid rgba(255, 215, 0, 0.3)',
+              backgroundColor: '#fff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15))',
             }}
           >
-            🚶
+            <img
+              src="/photos/slide7/walking.jpg"
+              alt="Walking feet"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '13px',
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                console.warn('Walking photo not found at /photos/slide7/walking.jpg');
+              }}
+            />
           </motion.div>
         </motion.div>
       )}

@@ -8,14 +8,14 @@ const Slide2 = ({ onNext }) => {
   const [showContinue, setShowContinue] = useState(false);
 
   const photos = [
-    { name: 'Blue saree', emoji: '👗' },
-    { name: 'Pink saree selfie', emoji: '🤳' },
-    { name: 'Black shirt with glasses', emoji: '😎' },
-    { name: 'Maroon saree', emoji: '💃' },
-    { name: 'Blue floral shirt', emoji: '🌸' },
-    { name: 'Light blue dress', emoji: '✨' },
-    { name: 'Grey saree', emoji: '🦢' },
-    { name: 'Black & white patterned top', emoji: '🎨' },
+    { name: 'Blue saree', image: '/photos/slide2/photo1.jpg' },
+    { name: 'Pink saree selfie', image: '/photos/slide2/photo2.jpg' },
+    { name: 'Black shirt with glasses', image: '/photos/slide2/photo3.jpg' },
+    { name: 'Maroon saree', image: '/photos/slide2/photo4.jpg' },
+    { name: 'Blue floral shirt', image: '/photos/slide2/photo5.jpg' },
+    { name: 'Light blue dress', image: '/photos/slide2/photo6.jpg' },
+    { name: 'Grey saree', image: '/photos/slide2/photo7.jpg' },
+    { name: 'Black & white patterned top', image: '/photos/slide2/photo8.jpg' },
   ];
 
   const texts = [
@@ -75,22 +75,45 @@ const Slide2 = ({ onNext }) => {
 
       {/* Photo Display Area */}
       <motion.div
+        key={currentPhotoIndex}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.6 }}
         style={{
-          fontSize: '120px',
+          maxWidth: '400px',
+          maxHeight: '400px',
+          borderRadius: '20px',
+          overflow: 'hidden',
           marginBottom: '40px',
           position: 'relative',
           zIndex: 10,
-          filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2))',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+          border: '3px solid rgba(255, 215, 0, 0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#fff',
         }}
-        key={currentPhotoIndex}
       >
-        {currentPhotoIndex > 0 && currentPhotoIndex <= photos.length
-          ? photos[currentPhotoIndex - 1].emoji
-          : '📸'}
+        {currentPhotoIndex > 0 && currentPhotoIndex <= photos.length ? (
+          <img
+            src={photos[currentPhotoIndex - 1].image}
+            alt={photos[currentPhotoIndex - 1].name}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              borderRadius: '17px',
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+              console.warn(`Image not found: ${photos[currentPhotoIndex - 1].image}`);
+            }}
+          />
+        ) : (
+          <div style={{ fontSize: '120px', textAlign: 'center' }}>📷</div>
+        )}
       </motion.div>
 
       {/* Glow effect behind photo */}

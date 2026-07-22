@@ -10,9 +10,9 @@ const Slide5 = ({ onNext }) => {
   const [showContinue, setShowContinue] = useState(false);
 
   const photos = [
-    { name: 'Maroon saree', emoji: '💃', text: 'Strength looks beautiful on you...' },
-    { name: 'Purple saree', emoji: '👑', text: 'You don\'t need to try to shine...' },
-    { name: 'Traditional selfie', emoji: '🌟', text: 'Never forget how amazing you are...' },
+    { name: 'Maroon saree', image: '/photos/slide5/photo1.jpg', text: 'Strength looks beautiful on you...' },
+    { name: 'Purple saree', image: '/photos/slide5/photo2.jpg', text: "You don't need to try to shine..." },
+    { name: 'Traditional selfie', image: '/photos/slide5/photo3.jpg', text: 'Never forget how amazing you are...' },
   ];
 
   React.useEffect(() => {
@@ -90,14 +90,38 @@ const Slide5 = ({ onNext }) => {
         >
           <div
             style={{
-              fontSize: '130px',
+              maxWidth: '350px',
+              maxHeight: '350px',
+              borderRadius: '20px',
+              overflow: 'hidden',
               marginBottom: '40px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+              border: '3px solid rgba(255, 215, 0, 0.4)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#fff',
               filter: 'drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15))',
             }}
           >
-            {photoIndex > 0 && photoIndex <= photos.length
-              ? photos[photoIndex - 1].emoji
-              : '✨'}
+            {photoIndex > 0 && photoIndex <= photos.length ? (
+              <img
+                src={photos[photoIndex - 1].image}
+                alt={photos[photoIndex - 1].name}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '17px',
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  console.warn(`Image not found: ${photos[photoIndex - 1].image}`);
+                }}
+              />
+            ) : (
+              <div style={{ fontSize: '100px', textAlign: 'center' }}>✨</div>
+            )}
           </div>
 
           {/* Text */}
@@ -132,7 +156,7 @@ const Slide5 = ({ onNext }) => {
             >
               {photoIndex === 1 && '❤️'}
               {photoIndex === 2 && '⭐'}
-              {photoIndex === 3 && '💫'}
+              {photoIndex === 3 && '💬'}
             </motion.div>
           )}
         </motion.div>
@@ -155,6 +179,7 @@ const Slide5 = ({ onNext }) => {
               zIndex: 10,
               marginBottom: '40px',
               perspective: '1000px',
+              flexWrap: 'wrap',
             }}
           >
             {photos.map((photo, idx) => (
@@ -178,11 +203,30 @@ const Slide5 = ({ onNext }) => {
                   type: 'spring',
                 }}
                 style={{
-                  fontSize: '90px',
+                  width: '100px',
+                  height: '100px',
+                  borderRadius: '15px',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
+                  border: '2px solid rgba(255, 215, 0, 0.3)',
+                  backgroundColor: '#fff',
                   filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1))',
                 }}
               >
-                {photo.emoji}
+                <img
+                  src={photo.image}
+                  alt={photo.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    borderRadius: '13px',
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    console.warn(`Image not found: ${photo.image}`);
+                  }}
+                />
               </motion.div>
             ))}
           </motion.div>

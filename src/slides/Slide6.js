@@ -115,12 +115,33 @@ const Slide6 = ({ onNext }) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontSize: '120px',
+          width: '150px',
+          height: '150px',
+          borderRadius: '15px',
+          overflow: 'hidden',
+          boxShadow: '0 10px 30px rgba(255, 255, 255, 0.2)',
+          border: '3px solid rgba(255, 215, 0, 0.3)',
           zIndex: 8,
-          filter: 'drop-shadow(0 10px 30px rgba(255, 255, 255, 0.2))',
+          backgroundColor: '#fff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        👨
+        <img
+          src="/photos/slide6/father.jpg"
+          alt="Father"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            borderRadius: '12px',
+          }}
+          onError={(e) => {
+            e.target.style.display = 'none';
+            console.warn('Father photo not found at /photos/slide6/father.jpg');
+          }}
+        />
       </motion.div>
 
       {/* Sitting Panda */}
